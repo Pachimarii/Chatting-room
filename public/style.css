@@ -1,0 +1,11 @@
+#err{
+    background-color: rgba(165, 42, 42, 0.226);
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: brown;
+}
+
+#err p{
+    color: rgba(114, 36, 36, 0.658);
+    padding: 1vw;
+}
