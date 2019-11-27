@@ -45,9 +45,9 @@
       </form>
     </div>
   </nav>
-  <div class="card bg-light mb-3" style="max-width: 18rem;">
-      <div class="card-header">Sign Up</div>
 
+  <div class="card bg-light mb-3" style="max-width: 18rem;">
+      <div class="card-header">Login</div>
       <div class="card-body">
           <div id="err">
               {{#if hasErrors}}
@@ -56,18 +56,12 @@
                   {{/each}}
               {{/if}}
           </div>
-
           <h1>
               <a href="/auth/facebook" class="btn-social btn-facebook btn-lg">
-                  <i class="fa fa-facebook"></i> Sign Up With Facebook
+                  <i class="fa fa-facebook"></i> Login With Facebook
               </a>
           </h1>
-          
-          <form action="/signup" method="post">
-              <div class="form-group">
-                  <label for="InputUsername">Username</label>
-                  <input type="text" name="username" class="form-control" id="InputUsername">
-              </div>
+          <form action="/" method="post">
               <div class="form-group">
                   <label for="InputEmail">Email address</label>
                   <input type="email" name="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">

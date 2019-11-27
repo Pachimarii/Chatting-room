@@ -4,11 +4,18 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var exphbs = require('express-handlebars');
 var userRouter = require('./routes/userRoutes');
+var homeRouter = require('./routes/homeRoutes');
+var chatRouter = require('./routes/chatRoutes');
 var mongoose = require('mongoose');
 var dotenv = require('dotenv');
 var flash = require('connect-flash');
 var session = require('express-session');
+const {Users} = require('./utils/usersClass');
 const passport =  require('passport');
+//set up express app.
+var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 // const passport =  require('passport');
 // Load envirorment variables
 dotenv.config({
@@ -27,8 +34,10 @@ mongoose
   .then(() => console.log('DB connection successful!'));
 
   require('./passport/passport-local')(passport);
-//set up express app.
-var app = express();
+  require('./passport/passport-facebook')(passport);
+  require('./socket/groupchat')(io, Users);
+  require('./socket/friend')(io);
+
 app.use(session({  
   secret: 'meow',
   resave: false, 
@@ -49,19 +58,16 @@ app.set('view engine', 'hbs');
 app.use('/public', express.static('public'));
 
 //Routes
-app.get('/', function (req, res) {
-  res.render('index');
-});
-
-// homepage after loggedin/ signed up successfully
-app.get('/home', function (req, res) {
-  res.render('home');
-});
+// app.get('/', function (req, res) {
+//   res.render('index');
+// });
 
 // use express.Router
-app.use('/signup', userRouter);
+app.use('/', userRouter);
+app.use('/', homeRouter);
+app.use('/', chatRouter);
 
 
-app.listen(3000, function () {
+http.listen(3000, function () {
   console.log('Listening on port 3000!');
 });
