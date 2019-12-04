@@ -1,1 +1,56 @@
-<h1>Login Page</h1>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Arcade-chat | Login</title>
+    <link rel="icon" type="image/gif" href="../public/img/web-icon.png" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../public/css/login.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+
+</head>
+<body>
+  {{> login-nav}}
+<div id="main">
+    <div class="main  nes-container">
+        <form action="/" method="post">
+           <h1>
+                <a href="/auth/facebook" class="btn-social btn-facebook btn-lg">
+                    <i class="nes-icon facebook is-medium"></i> Login With Facebook
+                </a>
+            </h1>
+
+            <h1>
+                Login
+            </h1>
+            {{#if flag}}
+            <div class="alert alert-danger text-center">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{#each messages}}
+                     {{this}}
+                {{/each}}              
+            </div>
+            {{/if}}
+            <div class="inset">
+                <p>
+                    <label for="email">EMAIL ADDRESS</label>
+                    <input type="text" name="email" placeholder="" />
+                </p>
+                <p>
+                    <label for="password">PASSWORD</label>
+                    <input type="password" name="password" placeholder="" />
+                </p>
+
+            </div>
+
+            <p class="p-container">
+                <a href="/signup " class='to-login'><button type="button" class="nes-btn is-normal">Not yet registered?</button></a>
+                {{!-- <input type="submit" class="login-log" style=" background: #3bb5ec; border: #3bb5ec;" value="Login"> --}}
+                <button type="submit" class="login-log nes-btn is-primary">Login!</button>
+            </p>
+        </form>
+        </form>
+    </div>
+</div>
+</body>

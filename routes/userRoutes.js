@@ -1,36 +1,57 @@
-const userController = require('../controller/userController');
-var express = require('express');
-var passport = require('passport');
-var dotenv = require('dotenv');
-var mongoose = require('mongoose');
-mongoose.Promise = global.Promise
 
+const passport =  require('passport');
+const User = require('../controllers/authControllers');
+var express = require('express')
+var userRouter = express.Router()
 
-var userRoute = express.Router();
-
-userRoute.get('/signup',function (req, res){
-    const errors = req.flash('error');
-    console.log(errors);
-    res.render('signup',{title: 'Footballkik | Login', message: errors, hasErrors: errors.length>0});
+userRouter.get('/signup',(req, res)=>{
+    const errors = req.flash('error')
+    return res.render('signup',
+    {
+        title:"Chatting room Log in",
+        messages: errors,
+        // if error array > 0 then we have an error need to display
+        flag :errors.length > 0 
+    }
+    );
 });
 
-userRoute.post('/signup',userController.validateSignup,userController.accountValidation,userController.postSignUp);
+// use express-validator to help us validate user.
+userRouter.post('/signup',User.signUpHelper,User.Validation,passport.authenticate('local.signup',{
+    successRedirect:'/home',
+    failureRedirect:'/signup', 
+    failureFlash:true // allow flash messages
+}));
 
-userRoute.get('/',function (req, res){
-    const errors = req.flash('error');
-    console.log(errors);
-    res.render('login',{title: 'Footballkik | Login', message: errors, hasErrors: errors.length>0});
+// sign in function
+userRouter.get('/',(req, res)=>{
+    const errors = req.flash('error')
+    return res.render('index',
+    {
+        title:"Chatting room Log in",
+        messages: errors,
+        // if error array > 0 then we have an error need to display
+        flag :errors.length > 0 
+    }
+    );
 });
+// use express-validator to help us validate user.
+userRouter.post('/',User.logInHelper,User.Validation,passport.authenticate('local.login',{
+    successRedirect:'/home',
+    failureRedirect:'/', 
+    failureFlash:true // allow flash messages
+}));
 
-userRoute.post('/',userController.validateLogin,
-userController.accountValidation,
-userController.postLogin);
-
-//  Facebook Login
-userRoute.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }) );
-userRoute.get('/auth/facebook/callback', passport.authenticate('facebook', {
+// facebook log in
+userRouter.get('/auth/facebook',passport.authenticate('facebook', {
+    scope: 'email'
+   
+ }));
+//It receive  the access token and optional refresh token, as well as profile which contains the authenticated user's Facebook profile
+ userRouter.get('/auth/facebook/callback',passport.authenticate('facebook', {
     successRedirect: '/home',
     failureRedirect: '/signup',
     failureFlash: true
 }));
-module.exports = userRoute;
+
+module.exports = userRouter;

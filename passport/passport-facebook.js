@@ -1,8 +1,6 @@
 'use strict'
-const passport =  require('passport');
-const User = require('../models/userModels');
-const FacebookStrategy = require('passport-facebook').Strategy;
-
+const User = require('../models/userModel');
+const faceBookStrategy = require('passport-facebook').Strategy;
 
 module.exports = function(passport) {
 passport.serializeUser((user,done)=>{
@@ -14,9 +12,12 @@ passport.deserializeUser((id,done)=>{
         //if no error, this would be null.
         done(err,user);
     });
-});
 
-passport.use(new FacebookStrategy({
+
+});
+//handle sign up function
+
+passport.use(new faceBookStrategy({
     clientID: process.env.Facebook_ID,
     clientSecret: process.env.Facebook_Secret,
     profileFields: ['email', 'displayName', 'photos'],
@@ -39,7 +40,7 @@ passport.use(new FacebookStrategy({
             newUser.username = profile.displayName;
             newUser.email = profile._json.email;
             newUser.photo = 'https://graph.facebook.com/'+profile.id+'/picture?type=large';
-            newUser.fbTokens.push({token:token});
+            newUser.fbtokens.push({token:token});
             
             newUser.save((err) => {
                 return done(null, newUser);
@@ -47,5 +48,4 @@ passport.use(new FacebookStrategy({
         }
     })
 }));
-
 }

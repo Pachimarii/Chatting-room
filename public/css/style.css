@@ -1,0 +1,283 @@
+/* html { 
+    
+  } */
+
+body{
+    background: url(../img/bg1.png) no-repeat center center fixed; 
+    
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: rgba(85, 85, 85, 0);
+}
+/* =============== Navbar styling ================*/
+.navbar{
+    background: #22314d;
+    height: 7.2vh;
+
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+	padding-left: 0px;
+    text-decoration: none;
+}
+
+.navbar-brand:hover{
+    color: #fff !important;
+    background-color: #4aa1f3;
+}
+
+.navbar-default .navbar-nav > li > a {
+    margin-top: 1.3vh;
+    color: #fff !important;
+    background-color: #22314d;
+    font-size: .7vw;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #fff !important;
+    background-color: #22314d;
+}
+
+.dropdown-toggle{
+    margin-top: 1.3vh;
+    background: #22314d !important; 
+}
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+    background:  #22314d !important; 
+    border: none !important;
+    color:#000 !important;
+}
+#aboutlink{
+    margin-left: 2vw !important;
+    font-size: 0.5vw !important;
+}
+
+/* =============== search bar  styling ================*/
+.searchbar{
+    margin: 4vh 0 3vh 0;
+}
+
+.new-search-bar {
+   
+    background: rgba(255, 255, 255, 0.904);
+    padding-left: 20px;
+    height: 52px;
+    font-size: 17px;
+    border: 1px;
+}
+.new-search-bar:focus{
+    z-index: -1;
+}
+
+.input-btn {
+    z-index: 1;
+    background: #4aa1f3;
+    padding-left: 23px;
+    padding-right: 23px;
+    border: none;
+    height: 52px;
+    font-size: 15px;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.3px;
+    text-shadow:none;
+    color:white !important;
+}
+
+.search-style {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#custom-search-input {
+    background: #e8e6e7 none repeat scroll 0 0;
+    padding: 10px;
+}
+
+#custom-search-input .search-query {
+    background: #fff none repeat scroll 0 0 !important;
+    border-radius: 4px;
+    height: 33px;
+    margin-bottom: 0;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+#custom-search-input button {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 3px;
+    color: #666666;
+    /* left: auto; */
+    margin-bottom: 0;
+    margin-top: 7px;
+    padding: 2px 5px;
+    position: absolute;
+    right: 0;
+    z-index: 9999;
+}
+
+
+
+/* =============== cards styling ================*/
+.cards-div{
+    margin: 0 auto;
+    width: 75vw;
+   /* background: chartreuse; */
+}
+
+.card {
+    margin: 0 1vw 0 1vw;
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.507);
+    border-radius: 4px;
+    color: #444444;
+}
+
+.caption{
+    text-align: center;
+    font-size: .7vw;
+    height: 3vw;
+}
+.card .content {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    padding: 10px 20px 20px;
+    
+}
+
+
+
+.add-apply{
+    background: #4aa1f3;
+    width: 100%;
+    text-shadow: none;
+    color: #ffffff !important;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+.add-fav{
+    background: #4aa1f3;
+    width: 100%;
+    text-shadow: none;
+    color: #ffffff !important;
+    font-weight: bold; 
+    padding: 5px 2px 5px 2px;
+}
+
+
+.nav-label-icon {
+    top: -9px;
+    position: relative;
+    background: red;
+    padding: 2px;
+}
+
+.nav-glyphicon {
+    padding-right: 4px;
+    position: relative;
+    top: 2px;
+}
+
+.dropdown-tag-head {
+    color: white;
+    padding-top: 7px;
+    margin-top: 0px;
+    font-size: 17px;
+}
+
+.dmenu {
+    padding-top: 0px !important;
+}
+
+.dropdown-tag {
+    background: rgb(23, 39, 58);
+    color: white;
+    padding: 4px;
+    margin-bottom: 15px;
+}
+
+.navbar-login {
+    width: 305px;
+    padding-bottom: 30px;
+    padding-top: 0px;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.drop-name {
+    margin-bottom: 0px;
+}
+
+.dropdown-divider {
+    margin-top: 5px !important;
+    margin-bottom: 14px !important;
+}
+
+.drop-accept {
+    background:  rgb(23, 39, 58) !important;
+    /* border: #3bb5ec; */
+    color: white !important;
+    text-shadow: none;
+}
+
+#reload{
+    padding: 0px 15px 0px 15px;
+}
+
+.thumb_nail{
+    height: 250px;
+    padding-top: 20px;
+}
+
+.dropdown-img{
+    width: 40px;
+    height: 40px;
+}
+
+
+/* ============== styling for aboutpage =============== */
+.about-container{
+    margin: 20vh auto;
+    background: rgba(243, 242, 236, 0.411);
+    padding: 0.5vh;
+}
+
+#catdialog{
+    margin: 5vh auto;
+    width: 70vw;
+    /* background: #e8e6e775; */
+    padding:0 3vw;
+    /* border-radius: 100px; */
+}
+
+#catdialog #octo span{
+    color: rgb(37, 121, 190);
+}
+
+#catdialog #user{
+    position: relative;
+    float: right;
+}
+
+#homebutton {
+    margin: 4vh auto ;
+    width: fit-content;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arcade-chat | About</title>
+    <link rel="icon" type="image/gif" href="../public/img/web-icon.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./../public/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+</head>
+<body>
+    {{> navbar}}
+    <div class='about-container'>
+        <div id='catdialog'>
+            <div id="octo">
+                <i class="nes-octocat animate"></i>
+                <div class="nes-balloon from-left">
+                    <p>Hello there! Adventurer <span>@{{user.username}}</span>,<br> we are glad you are here. <br>
+                    This website is made by:<br> &nbsp;<span>@Minhui_Xie</span> and <span>@Boyan_Liu</span>,<br>
+                    Hope you are having fun chatting and exploring the channels! 
+                    </p>
+                </div>
+            </div>
+            
+            <div id="user">
+                <div class="nes-balloon from-right">
+                    <p>Alrighty, Take me back to the homepage!</p>
+                </div>
+                <img src="../../public/img/icon.jpg" class="is-rounded nes-avatar is-large" alt="" style="image-rendering: pixelated;">
+            </div>
+
+            
+        </div>
+        <div id="homebutton">
+            <a href="/home">
+                <button type="button" class="nes-btn is-primary"> Back to Homepage</button>
+            </a>
+        </div>
+    </div>
+    
+
+
+            
+    
+    
+</body>

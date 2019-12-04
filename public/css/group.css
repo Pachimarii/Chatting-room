@@ -1,0 +1,374 @@
+/* body {
+    font-size: 16px;
+    line-height: 1.42857143;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #555;
+    background: #eeeeee;
+} */
+
+html { 
+    background: url(../img/bg1.png) no-repeat center center fixed; 
+    opacity: 97%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+.contents{
+    margin-top: 2.5vh;
+}
+h1 {
+    font-size: 38px;
+    color: rgb(18, 28, 49);
+}
+
+
+h2 {
+    font-size: 32px;
+    color: #5C5C5B;
+    margin-top: 0px;
+}
+
+h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.navbar{
+    background: #22314d;
+    height: 7.2vh;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+	padding-left: 0px;
+    text-decoration: none;
+}
+
+.navbar-brand:hover{
+    color: #fff !important;
+    background-color: #4aa1f3;
+}
+
+.navbar-default .navbar-nav > li > a {
+    margin-top: 1.4vh;
+    color: #fff !important;
+    background-color: #22314d;
+    font-size: .7vw;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #fff !important;
+    background-color: #22314d;
+}
+
+.dropdown-toggle{
+    margin-top: 1.4vh;
+    background: #22314d !important; 
+}
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+    background:  #22314d !important; 
+    border: none !important;
+    color:#000 !important;
+}
+#aboutlink{
+    margin-left: 2vw !important;
+    font-size: 0.5vw !important;
+}
+.margin-80{
+    margin-bottom:80px
+}
+
+.new_message_head button {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    outline: 0;
+    font-size: 17px;
+    color: #4aa1f3;
+}
+
+.new_message_head button:focus {
+	outline: 0 !important;
+}
+
+.new_message_head {
+    background: rgba(255, 255, 255, 0.719) none repeat scroll 0 0;
+    float: left;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 18px 10px;
+    width: 100%;
+    border: 1px solid rgba(128, 128, 128, 0.32);
+}
+
+.message_section {
+    background: rgba(255, 255, 255, 0.582) ;
+    border: 1px solid #ddddddb0;
+}
+
+.chat_area {
+    /* background: rgba(255, 255, 255, 0.582); */
+    /* float: left; */
+    height: 360px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    /* border-left: 1px solid rgba(128, 128, 128, 0.32);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.32);
+    border-right: 1px solid rgba(128, 128, 128, 0.32); */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+    .chat_area li {
+        padding: 14px 14px 0;
+        width:max-content;
+        text-align: start;
+
+    }
+
+        .chat_area li .chat-img1 img {
+            height: 80px;
+            width: 80px;
+            display: inline-block;
+            border: 3px solid rgba(0, 0, 0, 0.5);
+        }
+
+    .chat_area .chat-body1 {
+        margin-left: 0vw;
+        display: inline-block;
+    }
+
+.chat_area li:last-child {
+    padding-bottom: 10px;
+}
+
+.message_write {
+    border-top:  3px solid #000 ;
+    background: rgba(255, 255, 255, 0.418) none repeat scroll 0 0;
+    float: left;
+    padding: 15px;
+    width: 100%;
+}
+
+    .message_write textarea.form-control {
+        height: 70px;
+        padding: 10px;
+    }
+
+.chat_bottom {
+    float: left;
+    margin-top: 13px;
+    width: 100%;
+}
+
+member_list li:hover {
+    background: #428bca none repeat scroll 0 0;
+    color: rgba(255, 255, 255, 0.589);
+    cursor: pointer;
+}
+
+.friends {
+    font-size: 18px;
+    color: gray;
+}
+
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+    outline: 0 !important;
+}
+.card-container {
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+    margin-bottom: 30px;
+    /* margin-top: 30px; */
+}
+
+
+/* change card color here */
+.card {
+    background: none repeat scroll 0 0 rgba(237, 238, 238, 0.562);
+    border-radius: 4px;
+    color: #444444;
+}
+
+.card-container, .front, .back {
+    width: 100%;
+    border-radius: 4px;
+    /* -webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16); */
+}
+
+.card .cover {
+    height: 105px;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+}
+
+    .card .cover img {
+        width: 100%;
+    }
+
+.card .user {
+    border-radius: 50%;
+    display: block;
+    height: 120px;
+    margin: -55px auto 0;
+    overflow: hidden;
+    width: 120px;
+}
+
+    .card .user img {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 2px solid #FFFFFF;
+        width: 100%;
+    }
+
+.card .content {
+    background-color: rgba(211, 206, 206, 0);
+    box-shadow: none;
+    padding: 10px 20px 20px;
+}
+
+    .card .main {
+        min-height: 160px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+.card .back .content .main {
+    height: 215px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.card .name {
+    font-family: 'Arima Madurai', cursive;
+    font-size: 22px;
+    line-height: 28px;
+    margin: 10px 0 0;
+    text-align: center;
+}
+
+
+.card .profession-online {
+    color: #494848;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.online {
+    font-size: 13px;
+    color: rgba(115, 218, 94, 0.95);
+    position: relative;
+    top: -4px;
+}
+
+.card .footer {
+    border-top: 1px solid #EEEEEE;
+    color: #726d6d;
+    margin: 30px 0 0;
+    padding: 10px 0 0;
+    text-align: center;
+    
+}
+.card .footer a{
+    color: rgb(36, 78, 156);
+    font-weight: 600;
+}
+
+.card .footer a:hover{
+    color: rgb(65, 117, 214);
+    font-weight: 600;
+}
+
+
+
+
+.main-scroll {
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.online_friend {
+    font-size: 10px;
+    color: rgba(129, 191, 57, 0.95);
+    position: relative;
+    float: right;
+}
+
+/* change name color here */
+.name, .friends, #numOfFriends, .club_name, .club_fans{
+    color: #0e3d5c !important;
+    font-weight: 600;
+}
+
+.bl {
+    color: #03a9f4;
+    font-weight: 500;
+}
+
+.gr-rightsidebar {
+    padding-top: 15px;
+    background: rgba(255, 255, 255, 0.616);
+    float: left;
+    height: 506px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    border-left: 1px solid rgba(128, 128, 128, 0.32);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.32);
+    border-right: 1px solid rgba(128, 128, 128, 0.32);
+}
+
+
+.close{
+    color: #333;
+    opacity: 90%;
+}
+
+
+
+/* ======== styling for profile page ========== */
+body{
+    background: rgba(220, 20, 60, 0) !important;
+}
+
+#profile{
+    margin: 10vh auto;
+    width: 50vw;
+    text-align: center;
+}
+
+#profile p{
+    margin-top: 1vh;
+    color: rgb(54, 54, 54);
+}
+
+
+#profile .online {
+    font-size: 13px;
+    color: rgba(64, 161, 45, 0.95);
+    position: relative;
+    top: -4px;
+}

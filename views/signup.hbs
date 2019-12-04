@@ -1,85 +1,65 @@
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href='../../public/style.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-    <title>Chatting-room</title>
+    <title>Arcade-chat | Signup</title>
+    <link rel="icon" type="image/gif" href="../public/img/web-icon.png" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../public/css/login.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+
 </head>
-
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/home">Chatting-Room</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-  </button>
+ {{> login-nav}}
+<div id="main">
+    <div class="main nes-container">
+        {{!-- <h1 class="title">Sign Up</h1> --}}
+        <form action="/signup" method="post">
+            <h1>
+                <a href="/auth/facebook" class="btn-social btn-facebook btn-lg">
+                    <i class="nes-icon facebook is-medium"></i> Sign Up With Facebook
+                </a>
+            </h1>
+            
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Login<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/signup">Sign Up</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+            <h1>
+                Or...
+            </h1>
+
+            {{#if flag}}
+            <div class="alert alert-danger text-center">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{#each messages}}
+                     {{this}}
+                {{/each}}              
+            </div>
+            {{/if}}
+             <div class="inset">
+                <div class="nes-field">
+                  <label for="username name_field">USERNAME</label>
+                  <input type="text" name="username"  class="nes-input" >
+                </div>  
+
+                <div class="nes-field">
+                    <label for="email email-field">EMAIL ADDRESS</label>
+                    <input type="text" name="email" placeholder="" class="nes-input" />
+                </div>
+                <p>
+                    <label for="password">PASSWORD</label>
+                    <input type="password" name="password" placeholder="" />
+                </p>
+
+            </div>
+
+            <p class="p-container">
+                <a href="/" class="to-login nes-pointer"><button type="button" class="nes-btn nes-pointer is-normal">Login Instead</button></a>
+                <button type="submit button" class="nes-btn is-primary nes-pointer login-log" value="Register">Sign up!</button>
+            </p>
+        </form>
     </div>
-  </nav>
-  <div class="card bg-light mb-3" style="max-width: 18rem;">
-      <div class="card-header">Sign Up</div>
-
-      <div class="card-body">
-          <div id="err">
-              {{#if hasErrors}}
-                  {{#each message}}
-                      <p>{{this}}</p>
-                  {{/each}}
-              {{/if}}
-          </div>
-
-          <h1>
-              <a href="/auth/facebook" class="btn-social btn-facebook btn-lg">
-                  <i class="fa fa-facebook"></i> Sign Up With Facebook
-              </a>
-          </h1>
-          
-          <form action="/signup" method="post">
-              <div class="form-group">
-                  <label for="InputUsername">Username</label>
-                  <input type="text" name="username" class="form-control" id="InputUsername">
-              </div>
-              <div class="form-group">
-                  <label for="InputEmail">Email address</label>
-                  <input type="email" name="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-              </div>
-              <div class="form-group">
-                  <label for="InputPassword">Password</label>
-                  <input type="password" name="password" class="form-control" id="InputPassword" placeholder="Password">
-              </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-      </div>
-  </div>
+</div> 
 </body>
+
+
 
