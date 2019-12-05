@@ -78,6 +78,18 @@ $(document).ready(() => {
             }, function(){
                 $('#msg').val('');
             });
+
+            $.ajax({
+                url: '/group/'+room,
+                type:'POST',
+                data: {
+                    message: msg,
+                    group: room
+                },
+                success: function(){
+                    $('#msg').val('')
+                }
+            })
         }
     }
     //add emoji features in the textarea 
