@@ -90,7 +90,20 @@
                         <div class="row">
                             <div class="chat_area">
                                 <ul id="messages" class="list-unstyled">
-
+                                    {{#each groupMsg}}
+                                        <li class="left">
+                                            <span class="chat-img1 pull-left">
+                                                <img src="../../public/img/icon.jpg" class="nes-avatar is-rounded is-large" alt="">
+                                                <div class="chat-body1">
+                                                    <span class="chat-name">{{sender.username}}</span>
+                                                    <br>
+                                                    <div class="nes-balloon from-left">
+                                                        {{body}}
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </li>
+                                    {{/each}}
                                 </ul> 
                             </div>
 

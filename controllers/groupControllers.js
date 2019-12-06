@@ -1,11 +1,16 @@
 const Users= require('../models/userModel');
 const Group = require('../models/groupMessageModel');
 const async = require('async');
+
 exports.getGroupPage = function (req, res) {
     let name = req.params.name
     let gpname = name.split("_").join(" ")
-    res.render('groupchat/group',{user:req.user,name,gpname})
-    
+
+    Group.find({room: name}).populate('sender')
+    .then(e=>{
+        console.log(`result: ${e}`)
+        res.render('groupchat/group',{user:req.user, name, gpname, groupMsg:e})
+    })       
 }
 
 exports.groupPostPage = function (req,res) {
